@@ -1,3 +1,3 @@
 export default function Loader() {
-    return ('Caricamento ...')
+    return (<div>Caricamento ...</div>)
 }
