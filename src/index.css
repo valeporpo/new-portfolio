@@ -1,13 +1,60 @@
-body {
-  margin: 0;
-  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
-    'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
-    sans-serif;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
+* {
+  --main-background-color: #100F0F;
+  --secondary-background-color: #0F3D3E;
+  --border-color: #E2DCC8;
+  --text-color: #F1F1F1;
 }
 
-code {
-  font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
-    monospace;
+body {
+  background-color: var(--main-background-color);
+  color: var(--border-color);
+}
+
+/* Main container */
+body > div#root > div.main-container {
+  display: flex;
+}
+
+/* Left and right parts */
+body > div#root > div.main-container > div {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+}
+
+/* Left part */
+body > div#root > div.main-container > div:first-child {
+  width: 35%;
+}
+
+/* Right part */
+body > div#root > div.main-container > div:last-child {
+  width: 65%;
+}
+
+/* Section carousel */
+body > div#root > div.main-container > div:last-child > div.carousel {
+  width: 90%;
+  aspect-ratio: 2/1.5;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: space-between;
+  border: 1px solid var(--border-color);
+}
+
+/* Section carousel content */
+body > div#root > div.main-container > div:last-child > div.carousel > div:nth-child(2) {
+  aspect-ratio: 1/1;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 65%;
+  border: 1px solid var(--border-color);
+  border-radius: 50%;
+}
+/* Section carousel arrows */
+body > div#root > div.main-container > div:last-child > div.carousel > div:not(:nth-child(2)) {
+  cursor: pointer;
 }
