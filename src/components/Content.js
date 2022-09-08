@@ -24,10 +24,8 @@ export default function Content() {
           <div onClick={changeSection}>
             <span>&larr;</span>
           </div>
-          <div>
             {typeof section === "undefined" ? <Loader /> :
             section === "skills" ? <Skills /> : <Projects />}
-          </div>
           <div onClick={changeSection}>
             <span>&rarr;</span>
           </div>

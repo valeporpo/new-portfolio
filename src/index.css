@@ -3,6 +3,13 @@
   --secondary-background-color: #0F3D3E;
   --border-color: #E2DCC8;
   --text-color: #F1F1F1;
+  --php-proficiency: 56%;
+  --html-proficiency: 53%;
+  --mysql-proficiency: 45%;
+  --js-proficiency: 40%;
+  --jquery-proficiency: 36%;
+  --css-proficiency: 19%;
+  --react-proficiency: 15%;
 }
 
 body {
@@ -34,7 +41,8 @@ body > div#root > div.main-container > div:last-child {
 }
 
 /* Section carousel */
-body > div#root > div.main-container > div:last-child > div.carousel {
+body > div#root > div.main-container > div:last-child
+> div.carousel {
   width: 90%;
   aspect-ratio: 2/1.5;
   display: flex;
@@ -45,15 +53,207 @@ body > div#root > div.main-container > div:last-child > div.carousel {
 }
 
 /* Section carousel content */
-body > div#root > div.main-container > div:last-child > div.carousel > div:nth-child(2) {
+body > div#root > div.main-container > div:last-child
+> div.carousel > div:nth-child(2) {
   aspect-ratio: 1/1;
   display: flex;
+  flex-direction: column;
   align-items: center;
   justify-content: center;
   width: 65%;
-  border: 1px solid var(--border-color);
+  border: 2px solid var(--border-color);
   border-radius: 50%;
+  background-color: var(--secondary-background-color);
 }
+
+body > div#root > div.main-container > div:last-child
+> div.carousel > div:nth-child(2) > div.technology-wrapper {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+
+/* Single technology */
+body > div#root > div.main-container > div:last-child
+> div.carousel > div:nth-child(2) > div.technology-wrapper
+> div.technology {
+  margin-top: 5%;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  width: 60%;
+}
+
+/* Technology logo */
+body > div#root > div.main-container > div:last-child
+> div.carousel > div:nth-child(2) > div.technology-wrapper
+> div.technology > div:nth-child(1) > img {
+  height: 10px;
+}
+
+/* Technology bar */
+body > div#root > div.main-container > div:last-child
+> div.carousel > div:nth-child(2) > div.technology-wrapper
+> div.technology > div:nth-child(2) {
+  width: 80%;
+  border: 2px solid var(--border-color);
+  border-radius: 10px;
+}
+
+/* Technology bar filling */
+body > div#root > div.main-container > div:last-child
+> div.carousel > div:nth-child(2) > div.technology-wrapper
+> div.technology > div:nth-child(2) > div {
+  background-color: var(--border-color);
+  height: 100%;
+  border-radius: inherit;
+  box-shadow: 1px 1px 2px var(--border-color), -2px -2px 5px var(--border-color);
+}
+
+body > div#root > div.main-container > div:last-child
+> div.carousel > div:nth-child(2) > div.technology-wrapper
+> div.technology > div:nth-child(2).technology-bar.technology-bar-php
+> div.technology-bar-filling {
+  width: var(--php-proficiency);
+  animation: php-animate 1.2s linear;
+}
+/*
+@keyframes illuminate {
+  from {
+    box-shadow: 0px 0px 0px var(--border-color), 0px 0px 0px var(--border-color);
+  }
+  to {
+    box-shadow: 1px 1px 2px var(--border-color), -2px -2px 5px var(--border-color);
+  }
+}*/
+
+@keyframes php-animate {
+  from {
+    width: 0%;
+    /*box-shadow: 0px 0px 0px var(--border-color), 0px 0px 0px var(--border-color);*/
+  }
+  to {
+    width: var(--php-proficiency);
+    /*box-shadow: 0px 0px 0px var(--border-color), 0px 0px 0px var(--border-color);*/
+  }
+}
+
+body > div#root > div.main-container > div:last-child
+> div.carousel > div:nth-child(2) > div.technology-wrapper
+> div.technology > div:nth-child(2).technology-bar.technology-bar-html
+> div.technology-bar-filling {
+  width: var(--html-proficiency);
+  animation: html-animate 1.2s linear;
+}
+
+@keyframes html-animate {
+  from {
+    width: 0%;
+    /*box-shadow: 0px 0px 0px var(--border-color), 0px 0px 0px var(--border-color);*/
+  }
+  to {
+    width: var(--html-proficiency);
+    /*box-shadow: 0px 0px 0px var(--border-color), 0px 0px 0px var(--border-color);*/
+  }
+}
+
+body > div#root > div.main-container > div:last-child
+> div.carousel > div:nth-child(2) > div.technology-wrapper
+> div.technology > div:nth-child(2).technology-bar.technology-bar-mysql >
+div.technology-bar-filling {
+  width: var(--mysql-proficiency);
+  animation: mysql-animate 1.2s linear;
+}
+
+@keyframes mysql-animate {
+  from {
+    width: 0%;
+    /*box-shadow: 0px 0px 0px var(--border-color), 0px 0px 0px var(--border-color);*/
+  }
+  to {
+    width: var(--mysql-proficiency);
+    /*box-shadow: 0px 0px 0px var(--border-color), 0px 0px 0px var(--border-color);*/
+  }
+}
+
+body > div#root > div.main-container > div:last-child
+> div.carousel > div:nth-child(2) > div.technology-wrapper
+> div.technology > div:nth-child(2).technology-bar.technology-bar-js >
+div.technology-bar-filling {
+  width: var(--js-proficiency);
+  animation: js-animate 1.2s linear;
+}
+
+@keyframes js-animate {
+  from {
+    width: 0%;
+    /*box-shadow: 0px 0px 0px var(--border-color), 0px 0px 0px var(--border-color);*/
+  }
+  to {
+    width: var(--js-proficiency);
+    /*box-shadow: 0px 0px 0px var(--border-color), 0px 0px 0px var(--border-color);*/
+  }
+}
+
+body > div#root > div.main-container > div:last-child
+> div.carousel > div:nth-child(2) > div.technology-wrapper
+> div.technology > div:nth-child(2).technology-bar.technology-bar-jquery >
+div.technology-bar-filling {
+  width: var(--jquery-proficiency);
+  animation: jquery-animate 1.2s linear;
+}
+
+@keyframes jquery-animate {
+  from {
+    width: 0%;
+    /*box-shadow: 0px 0px 0px var(--border-color), 0px 0px 0px var(--border-color);*/
+  }
+  to {
+    width: var(--jquery-proficiency);
+    /*box-shadow: 0px 0px 0px var(--border-color), 0px 0px 0px var(--border-color);*/
+  }
+}
+
+body > div#root > div.main-container > div:last-child
+> div.carousel > div:nth-child(2) > div.technology-wrapper
+> div.technology > div:nth-child(2).technology-bar.technology-bar-css >
+div.technology-bar-filling {
+  width: var(--css-proficiency);
+  animation: css-animate 1.2s linear;
+}
+
+@keyframes css-animate {
+  from {
+    width: 0%;
+    /*box-shadow: 0px 0px 0px var(--border-color), 0px 0px 0px var(--border-color);*/
+  }
+  to {
+    width: var(--css-proficiency);
+    /*box-shadow: 0px 0px 0px var(--border-color), 0px 0px 0px var(--border-color);*/
+  }
+}
+
+body > div#root > div.main-container > div:last-child
+> div.carousel > div:nth-child(2) > div.technology-wrapper
+> div.technology > div:nth-child(2).technology-bar.technology-bar-react >
+div.technology-bar-filling {
+  width: var(--react-proficiency);
+  animation: react-animate 1.2s linear;
+}
+
+@keyframes react-animate {
+  from {
+    width: 0%;
+    /*box-shadow: 0px 0px 0px var(--border-color), 0px 0px 0px var(--border-color);*/
+  }
+  to {
+    width: var(--react-proficiency);
+    /*box-shadow: 0px 0px 0px var(--border-color), 0px 0px 0px var(--border-color);*/
+  }
+}
+
 /* Section carousel arrows */
 body > div#root > div.main-container > div:last-child > div.carousel > div:not(:nth-child(2)) {
   cursor: pointer;
