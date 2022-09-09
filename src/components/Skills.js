@@ -24,7 +24,7 @@ export default function Skills() {
     ]
     console.log('rend')
     return (
-        <div>
+        <div className="skills">
             <SideSelector className="side-selector"
                           handleSelection={setSide}
                           currentSide={side}

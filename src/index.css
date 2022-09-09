@@ -117,26 +117,15 @@ body > div#root > div.main-container > div:last-child
 > div.technology > div:nth-child(2).technology-bar.technology-bar-php
 > div.technology-bar-filling {
   width: var(--php-proficiency);
-  animation: php-animate 1.2s linear;
+  animation: php-animate 0.5s linear;
 }
-/*
-@keyframes illuminate {
-  from {
-    box-shadow: 0px 0px 0px var(--border-color), 0px 0px 0px var(--border-color);
-  }
-  to {
-    box-shadow: 1px 1px 2px var(--border-color), -2px -2px 5px var(--border-color);
-  }
-}*/
 
 @keyframes php-animate {
   from {
     width: 0%;
-    /*box-shadow: 0px 0px 0px var(--border-color), 0px 0px 0px var(--border-color);*/
   }
   to {
     width: var(--php-proficiency);
-    /*box-shadow: 0px 0px 0px var(--border-color), 0px 0px 0px var(--border-color);*/
   }
 }
 
@@ -145,17 +134,15 @@ body > div#root > div.main-container > div:last-child
 > div.technology > div:nth-child(2).technology-bar.technology-bar-html
 > div.technology-bar-filling {
   width: var(--html-proficiency);
-  animation: html-animate 1.2s linear;
+  animation: html-animate 0.5s linear;
 }
 
 @keyframes html-animate {
   from {
     width: 0%;
-    /*box-shadow: 0px 0px 0px var(--border-color), 0px 0px 0px var(--border-color);*/
   }
   to {
     width: var(--html-proficiency);
-    /*box-shadow: 0px 0px 0px var(--border-color), 0px 0px 0px var(--border-color);*/
   }
 }
 
@@ -164,17 +151,15 @@ body > div#root > div.main-container > div:last-child
 > div.technology > div:nth-child(2).technology-bar.technology-bar-mysql >
 div.technology-bar-filling {
   width: var(--mysql-proficiency);
-  animation: mysql-animate 1.2s linear;
+  animation: mysql-animate 0.5s linear;
 }
 
 @keyframes mysql-animate {
   from {
     width: 0%;
-    /*box-shadow: 0px 0px 0px var(--border-color), 0px 0px 0px var(--border-color);*/
   }
   to {
     width: var(--mysql-proficiency);
-    /*box-shadow: 0px 0px 0px var(--border-color), 0px 0px 0px var(--border-color);*/
   }
 }
 
@@ -183,17 +168,15 @@ body > div#root > div.main-container > div:last-child
 > div.technology > div:nth-child(2).technology-bar.technology-bar-js >
 div.technology-bar-filling {
   width: var(--js-proficiency);
-  animation: js-animate 1.2s linear;
+  animation: js-animate 0.5s linear;
 }
 
 @keyframes js-animate {
   from {
     width: 0%;
-    /*box-shadow: 0px 0px 0px var(--border-color), 0px 0px 0px var(--border-color);*/
   }
   to {
     width: var(--js-proficiency);
-    /*box-shadow: 0px 0px 0px var(--border-color), 0px 0px 0px var(--border-color);*/
   }
 }
 
@@ -202,17 +185,15 @@ body > div#root > div.main-container > div:last-child
 > div.technology > div:nth-child(2).technology-bar.technology-bar-jquery >
 div.technology-bar-filling {
   width: var(--jquery-proficiency);
-  animation: jquery-animate 1.2s linear;
+  animation: jquery-animate 0.5s linear;
 }
 
 @keyframes jquery-animate {
   from {
     width: 0%;
-    /*box-shadow: 0px 0px 0px var(--border-color), 0px 0px 0px var(--border-color);*/
   }
   to {
     width: var(--jquery-proficiency);
-    /*box-shadow: 0px 0px 0px var(--border-color), 0px 0px 0px var(--border-color);*/
   }
 }
 
@@ -221,17 +202,15 @@ body > div#root > div.main-container > div:last-child
 > div.technology > div:nth-child(2).technology-bar.technology-bar-css >
 div.technology-bar-filling {
   width: var(--css-proficiency);
-  animation: css-animate 1.2s linear;
+  animation: css-animate 0.5s linear;
 }
 
 @keyframes css-animate {
   from {
     width: 0%;
-    /*box-shadow: 0px 0px 0px var(--border-color), 0px 0px 0px var(--border-color);*/
   }
   to {
     width: var(--css-proficiency);
-    /*box-shadow: 0px 0px 0px var(--border-color), 0px 0px 0px var(--border-color);*/
   }
 }
 
@@ -240,18 +219,53 @@ body > div#root > div.main-container > div:last-child
 > div.technology > div:nth-child(2).technology-bar.technology-bar-react >
 div.technology-bar-filling {
   width: var(--react-proficiency);
-  animation: react-animate 1.2s linear;
+  animation: react-animate 0.5s linear;
 }
 
 @keyframes react-animate {
   from {
     width: 0%;
-    /*box-shadow: 0px 0px 0px var(--border-color), 0px 0px 0px var(--border-color);*/
   }
   to {
     width: var(--react-proficiency);
-    /*box-shadow: 0px 0px 0px var(--border-color), 0px 0px 0px var(--border-color);*/
   }
+}
+
+body > div#root > div.main-container > div:last-child
+> div.carousel > div.projects {
+  /*display: flex;
+  flex-direction: row;
+  justify-content: space-around;*/
+  position: relative;
+}
+
+body > div#root > div.main-container > div:last-child
+> div.carousel > div.projects > div {
+  color: black;
+  position: absolute;
+  height: 60%;
+  width: 20%;
+}
+
+body > div#root > div.main-container > div:last-child
+> div.carousel > div.projects > div:nth-child(1) {
+  background-color: red;
+  transform: scale(0.5);
+  left: 0;
+}
+
+body > div#root > div.main-container > div:last-child
+> div.carousel > div.projects > div:nth-child(2) {
+  background-color: green;
+  left: 50%;
+  transform: translate(-50%);
+}
+
+body > div#root > div.main-container > div:last-child
+> div.carousel > div.projects > div:nth-child(3) {
+  background-color: yellow;
+  transform: scale(0.5);
+  right: 0;
 }
 
 /* Section carousel arrows */
