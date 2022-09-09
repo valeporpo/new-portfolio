@@ -1,6 +1,6 @@
 export default function Me() {
     return (
-        <div className="me">
+        <div className="section me">
           <div>Me</div>
         </div>
     );

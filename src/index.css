@@ -1,8 +1,8 @@
 * {
   --main-background-color: #100F0F;
   --secondary-background-color: #0F3D3E;
-  --border-color: #E2DCC8;
-  --text-color: #F1F1F1;
+  --main-text-color: #E2DCC8;
+  --secondary-text-color: #F1F1F1;
   --php-proficiency: 56%;
   --html-proficiency: 53%;
   --mysql-proficiency: 45%;
@@ -14,71 +14,67 @@
 
 body {
   background-color: var(--main-background-color);
-  color: var(--border-color);
+  color: var(--main-text-color);
+  margin: 0;
+  padding: 0;
 }
 
 /* Main container */
 body > div#root > div.main-container {
   display: flex;
-}
-
-/* Left and right parts */
-body > div#root > div.main-container > div {
-  display: flex;
-  align-items: center;
-  justify-content: center;
   flex-direction: column;
 }
 
-/* Left part */
-body > div#root > div.main-container > div:first-child {
-  width: 35%;
-}
-
-/* Right part */
-body > div#root > div.main-container > div:last-child {
-  width: 65%;
-}
-
-/* Section carousel */
-body > div#root > div.main-container > div:last-child
-> div.carousel {
-  width: 90%;
-  aspect-ratio: 2/1.5;
-  display: flex;
-  flex-direction: row;
-  align-items: center;
-  justify-content: space-between;
-  border: 1px solid var(--border-color);
-}
-
-/* Section carousel content */
-body > div#root > div.main-container > div:last-child
-> div.carousel > div:nth-child(2) {
-  aspect-ratio: 1/1;
-  display: flex;
-  flex-direction: column;
+/* Sections */
+div.main-container > div.section {
+  display: inherit;
+  flex-direction: inherit;
   align-items: center;
   justify-content: center;
-  width: 65%;
-  border: 2px solid var(--border-color);
-  border-radius: 50%;
+  height: 100vh;
+}
+
+div.main-container > div.section:nth-child(odd) {
   background-color: var(--secondary-background-color);
 }
 
-body > div#root > div.main-container > div:last-child
-> div.carousel > div:nth-child(2) > div.technology-wrapper {
+/* Navigation */
+div.main-container > div.navigation {
+  position: fixed;
+  top: 50%;
+  right: 2%;
+  transform: translate(0%, -50%);
+  display: inherit;
+  flex-direction: inherit;
+  align-items: inherit;
+  justify-content: inherit;
+  text-align: center;
+}
+
+div.main-container > div.navigation > div {
+  cursor: pointer;
+  margin-top: 2px;
+  margin-bottom: 2px;
+}
+
+div.main-container > div.section.skills {
   width: 100%;
   display: flex;
-  flex-direction: column;
+  flex-direction: row;
   align-items: center;
   justify-content: center;
 }
 
+div.main-container > div.section.skills > div.subsection {
+  width: 50%;
+  display: inherit;
+  flex-direction: column;
+  align-items: inherit;
+  justify-content: inherit;
+}
+
 /* Single technology */
-body > div#root > div.main-container > div:last-child
-> div.carousel > div:nth-child(2) > div.technology-wrapper
-> div.technology {
+div.section.skills > div.subsection > div.technology {
   margin-top: 5%;
   display: flex;
   flex-direction: row;
@@ -87,34 +83,27 @@ body > div#root > div.main-container > div:last-child
 }
 
 /* Technology logo */
-body > div#root > div.main-container > div:last-child
-> div.carousel > div:nth-child(2) > div.technology-wrapper
-> div.technology > div:nth-child(1) > img {
+div.section.skills > div.subsection > div.technology > div:nth-child(1) > img {
   height: 10px;
 }
 
 /* Technology bar */
-body > div#root > div.main-container > div:last-child
-> div.carousel > div:nth-child(2) > div.technology-wrapper
-> div.technology > div:nth-child(2) {
+div.section.skills > div.subsection > div.technology > div:nth-child(2) {
   width: 80%;
-  border: 2px solid var(--border-color);
+  border: 2px solid var(--main-text-color);
   border-radius: 10px;
 }
 
 /* Technology bar filling */
-body > div#root > div.main-container > div:last-child
-> div.carousel > div:nth-child(2) > div.technology-wrapper
-> div.technology > div:nth-child(2) > div {
-  background-color: var(--border-color);
+div.section.skills > div.subsection > div.technology > div:nth-child(2) > div {
+  background-color: var(--main-text-color);
   height: 100%;
   border-radius: inherit;
-  box-shadow: 1px 1px 2px var(--border-color), -2px -2px 5px var(--border-color);
+  box-shadow: 1px 1px 2px var(--main-text-color), -2px -2px 5px var(--main-text-color);
 }
 
-body > div#root > div.main-container > div:last-child
-> div.carousel > div:nth-child(2) > div.technology-wrapper
-> div.technology > div:nth-child(2).technology-bar.technology-bar-php
+div.section.skills > div.subsection > div.technology
+> div:nth-child(2).technology-bar.technology-bar-php
 > div.technology-bar-filling {
   width: var(--php-proficiency);
   animation: php-animate 0.5s linear;
@@ -129,8 +118,7 @@ body > div#root > div.main-container > div:last-child
   }
 }
 
-body > div#root > div.main-container > div:last-child
-> div.carousel > div:nth-child(2) > div.technology-wrapper
+div.section.skills > div.subsection
 > div.technology > div:nth-child(2).technology-bar.technology-bar-html
 > div.technology-bar-filling {
   width: var(--html-proficiency);
@@ -146,8 +134,7 @@ body > div#root > div.main-container > div:last-child
   }
 }
 
-body > div#root > div.main-container > div:last-child
-> div.carousel > div:nth-child(2) > div.technology-wrapper
+div.section.skills > div.subsection
 > div.technology > div:nth-child(2).technology-bar.technology-bar-mysql >
 div.technology-bar-filling {
   width: var(--mysql-proficiency);
@@ -163,8 +150,7 @@ div.technology-bar-filling {
   }
 }
 
-body > div#root > div.main-container > div:last-child
-> div.carousel > div:nth-child(2) > div.technology-wrapper
+div.section.skills > div.subsection
 > div.technology > div:nth-child(2).technology-bar.technology-bar-js >
 div.technology-bar-filling {
   width: var(--js-proficiency);
@@ -180,8 +166,7 @@ div.technology-bar-filling {
   }
 }
 
-body > div#root > div.main-container > div:last-child
-> div.carousel > div:nth-child(2) > div.technology-wrapper
+div.section.skills > div.subsection
 > div.technology > div:nth-child(2).technology-bar.technology-bar-jquery >
 div.technology-bar-filling {
   width: var(--jquery-proficiency);
@@ -197,8 +182,7 @@ div.technology-bar-filling {
   }
 }
 
-body > div#root > div.main-container > div:last-child
-> div.carousel > div:nth-child(2) > div.technology-wrapper
+div.section.skills > div.subsection
 > div.technology > div:nth-child(2).technology-bar.technology-bar-css >
 div.technology-bar-filling {
   width: var(--css-proficiency);
@@ -214,8 +198,7 @@ div.technology-bar-filling {
   }
 }
 
-body > div#root > div.main-container > div:last-child
-> div.carousel > div:nth-child(2) > div.technology-wrapper
+div.section.skills > div.subsection
 > div.technology > div:nth-child(2).technology-bar.technology-bar-react >
 div.technology-bar-filling {
   width: var(--react-proficiency);
@@ -231,15 +214,12 @@ div.technology-bar-filling {
   }
 }
 
-body > div#root > div.main-container > div:last-child
+div.main-container > div:last-child 
 > div.carousel > div.projects {
-  /*display: flex;
-  flex-direction: row;
-  justify-content: space-around;*/
   position: relative;
 }
 
-body > div#root > div.main-container > div:last-child
+div.main-container > div:last-child
 > div.carousel > div.projects > div {
   color: black;
   position: absolute;
@@ -247,21 +227,21 @@ body > div#root > div.main-container > div:last-child
   width: 20%;
 }
 
-body > div#root > div.main-container > div:last-child
+div.main-container > div:last-child
 > div.carousel > div.projects > div:nth-child(1) {
   background-color: red;
   transform: scale(0.5);
   left: 0;
 }
 
-body > div#root > div.main-container > div:last-child
+div.main-container > div:last-child
 > div.carousel > div.projects > div:nth-child(2) {
   background-color: green;
   left: 50%;
   transform: translate(-50%);
 }
 
-body > div#root > div.main-container > div:last-child
+div.main-container > div:last-child
 > div.carousel > div.projects > div:nth-child(3) {
   background-color: yellow;
   transform: scale(0.5);
@@ -269,6 +249,6 @@ body > div#root > div.main-container > div:last-child
 }
 
 /* Section carousel arrows */
-body > div#root > div.main-container > div:last-child > div.carousel > div:not(:nth-child(2)) {
+div.main-container > div:last-child > div.carousel > div:not(:nth-child(2)) {
   cursor: pointer;
 }

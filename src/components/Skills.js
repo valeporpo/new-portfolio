@@ -22,20 +22,23 @@ export default function Skills() {
         {name : 'css', logo : cssLogo, side: 'frontEnd'},
         {name : 'react', logo : reactLogo, side: 'frontEnd'}
     ]
-    console.log('rend')
+
     return (
-        <div className="skills">
-            <SideSelector className="side-selector"
-                          handleSelection={setSide}
-                          currentSide={side}
-            />
-            <div className="technology-wrapper">
-                {technologies
-                .filter((technology) => technology.side === side)
+        <div className="section skills">
+          <div className="subsection frontend">
+          {technologies
+                .filter((technology) => technology.side === "frontEnd")
                 .map((technology) => <Technology name={technology.name}
                                                             logo={technology.logo}
                                                 />)}
-            </div>
+          </div>
+          <div className="subsection backend">
+          {technologies
+                .filter((technology) => technology.side === "backEnd")
+                .map((technology) => <Technology name={technology.name}
+                                                            logo={technology.logo}
+                                                />)}
+          </div>
         </div>
         
     )
