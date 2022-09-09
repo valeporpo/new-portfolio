@@ -1,11 +1,25 @@
+import Navigation from './components/Navigation'
 import Me from './components/Me'
-import Content from './components/Content'
+import Skills from './components/Skills'
+import Projects from './components/Projects'
+import Contact from './components/Contact'
 
 export default function App() {
+
+  const sections = [
+    'me',
+    'skills',
+    'projects',
+    'contact'
+  ]
+
   return (
     <div className='main-container'>
+       <Navigation sections={sections}/>
        <Me />
-       <Content />
+       <Skills />
+       <Projects />
+       <Contact />
     </div>
   );
 }

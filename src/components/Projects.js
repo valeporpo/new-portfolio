@@ -30,10 +30,13 @@ export default function Projects() {
     }
     
     return (
-      <div className="projects">
-        <div className="first-project">Lorem ipsum</div>
-        <div className="second-project">Lorem ipsum</div>
-        <div className="third-project">Lorem ipsum</div>
+      <div className="section projects">
+        <div className="current-project">
+
+        </div>
+        <div className="projects-menu-bar">
+            Lorem ipsum
+        </div>
       </div>
     )
 }
