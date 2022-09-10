@@ -1,3 +1,5 @@
+@import url('https://fonts.googleapis.com/css2?family=Andika&display=swap');
+
 * {
   --main-background-color: #100F0F;
   --secondary-background-color: #0F3D3E;
@@ -17,6 +19,8 @@ body {
   color: var(--main-text-color);
   margin: 0;
   padding: 0;
+  font-family: 'Andika', sans-serif;
+
 }
 
 /* Main container */
@@ -41,22 +45,228 @@ div.main-container > div.section:nth-child(odd) {
 /* Navigation */
 div.main-container > div.navigation {
   position: fixed;
-  top: 50%;
-  right: 2%;
-  transform: translate(0%, -50%);
+  top: 15px;
+  left: 15px;
+  /*transform: translate(0%, -50%);*/
   display: inherit;
-  flex-direction: inherit;
+  flex-direction: row;
   align-items: inherit;
-  justify-content: inherit;
+  justify-content: start;
   text-align: center;
+  width: 65px;
+  z-index: 2;
 }
 
 div.main-container > div.navigation > div {
   cursor: pointer;
-  margin-top: 2px;
-  margin-bottom: 2px;
+  width: 100%;
+  margin-top: 4px;
+  margin-bottom: 4px;
+  margin-left: 20px;
+  margin-right: 20px;
+  font-size: 0;
+  text-align: center;
+  height: 17px;
+  line-height: 17px;
+  animation: navigator-item-appear 0.4s ease;
+  animation-fill-mode: forwards;
 }
 
+div.main-container > div.navigation > div:hover {
+  font-weight: 1000;
+}
+
+div.main-container > div.navigation > div:nth-child(1) {
+  animation-delay: 5s;
+}
+
+div.main-container > div.navigation > div:nth-child(2) {
+  animation-delay: 5.4s;
+}
+
+div.main-container > div.navigation > div:nth-child(3) {
+  animation-delay: 5.8s;
+}
+
+div.main-container > div.navigation > div:nth-child(4) {
+  animation-delay: 6.2s;
+}
+
+@keyframes navigator-item-appear {
+  from {
+    font-size: 0;
+  }
+  to {
+    font-size: 17px;
+  }
+}
+
+/* Me */
+div.main-container > div.section#me {
+  flex-direction: row;
+}
+
+div.main-container > div.section#me > div {
+  display: inherit;
+  flex-direction: inherit;
+  align-items: inherit;
+  justify-content: inherit;
+  height: 100%;
+  font-size: 20px;
+}
+
+div.main-container > div.section#me > div:nth-child(1) {
+  display: inherit;
+  flex-direction: column;
+  align-items: inherit;
+  justify-content: inherit;
+  width: 40%;
+}
+
+div.main-container > div.section#me > div:nth-child(1) > div {
+  width: 100%;
+}
+
+div.main-container > div.section#me > div:nth-child(2) {
+  display: inherit;
+  flex-direction: column;
+  align-items: inherit;
+  justify-content: inherit;
+  width: 0%;
+}
+
+div.main-container > div.section#me > div:nth-child(2) > div {
+  border: 0px solid var(--secondary-background-color);
+  height: 0%;
+  animation: divider-appear 1s linear 3s;
+  animation-fill-mode: forwards;
+}
+
+@keyframes divider-appear {
+  3% { border: 3px solid var(--secondary-background-color); height: 1%; }
+  100% { border: 3px solid var(--secondary-background-color); height: 30%; }
+}
+
+div.main-container > div.section#me > div:nth-child(3) {
+  width: 60%;
+  padding-left: 30px;
+  padding-right: 30px;
+  box-sizing: border-box;
+}
+
+div.main-container > div.section#me > div:nth-child(3) > p {
+  font-size: 16px;
+  opacity: 0;
+  animation: main-text-appear 1s linear 4s;
+  animation-fill-mode: forwards;
+}
+
+@keyframes main-text-appear {
+
+  from {
+    opacity: 0;
+  }
+
+  to {
+    opacity: 1;
+  }
+  
+}
+
+div.section#me > div:nth-child(1) > div.animation-hider {
+  height: 20%;
+  position: relative;
+  z-index: 1;
+  background-color: #100F0F;
+}
+
+div.section#me > div:nth-child(1) > div#name-surname,
+div.section#me > div:nth-child(1) > div#job-description {
+  display: inherit;
+  flex-direction: row;
+  align-items: inherit;
+  justify-content: inherit;
+  position: relative;
+  z-index: 0;
+  line-height: 100%;
+}
+
+div.section#me > div:nth-child(1) > div#name-surname > span {
+  position: absolute;
+  top: -100%;
+  z-index: 0;
+  animation: name-surname-appear 0.5s ease 2s;
+  animation-fill-mode: forwards;
+}
+
+@keyframes name-surname-appear {
+  from {
+    top: -100%;
+    transform: translate(0%, 0%);
+  }
+  to {
+    top: 50%;
+    transform: translate(0%, -50%);
+  }
+}
+
+div.section#me > div:nth-child(1) > div#job-description > span {
+  position: absolute;
+  top: 100%;
+  z-index: 0;
+  animation: main-job-description-appear 0.5s ease 2.5s;
+  animation-fill-mode: forwards;
+}
+
+@keyframes main-job-description-appear {
+  from {
+    top: 100%;
+    transform: translate(0%, 0%);
+  }
+  to {
+    top: 50%;
+    transform: translate(0%, -50%);
+  }
+}
+
+div.section#me > div:nth-child(1) > div#name-surname {
+  height: 5%;
+}
+
+div.section#me > div:nth-child(1) > img {
+  height: 50%;
+  border-radius: 50%;
+  opacity: 0;
+  animation: profile-img-appear 2s;
+  animation-fill-mode: forwards;
+}
+
+div.section#me > div:nth-child(1) > div#job-description {
+  height: 5%;
+}
+
+
+@keyframes profile-img-appear {
+  /*0% { opacity: 0; }
+  25% { opacity: 1; }
+  30% { opacity: 0.3; }
+  35% { opacity: 1; }
+  40% { opacity: 0.3; }
+  45% { opacity: 1; }
+  50% { opacity: 0.3; }
+  55% { opacity: 1; }
+  77% { opacity: 0.3; }
+  100% { opacity: 1; }*/
+  20% {
+    opacity: 0;
+  }
+
+  100% {
+    opacity: 1;
+  }
+}
+
+/* Skills */
 div.main-container > div.section.skills {
   width: 100%;
   display: flex;
