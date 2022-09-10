@@ -1,8 +1,13 @@
 import profileImg from '../img_profile.jpg';
 
-export default function Me() {
+export default function Me(props) {
+
+    let currentSection = props.sections.filter(
+      (section) => section.text === "Me"
+    )
+
     return (
-        <div id="me" className="section">
+        <div id="me" className="section" ref={currentSection[0].reference}>
           <div>
             <div id="animation-hider-top" className="animation-hider">
             </div>
