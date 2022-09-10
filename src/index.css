@@ -53,7 +53,7 @@ div.main-container > div.navigation {
   align-items: inherit;
   justify-content: start;
   text-align: center;
-  width: 65px;
+  width: 200px;
   z-index: 2;
 }
 
@@ -78,18 +78,22 @@ div.main-container > div.navigation > div:hover {
 
 div.main-container > div.navigation > div:nth-child(1) {
   animation-delay: 5s;
+  width: 25%;
 }
 
 div.main-container > div.navigation > div:nth-child(2) {
   animation-delay: 5.4s;
+  width: 25%;
 }
 
 div.main-container > div.navigation > div:nth-child(3) {
   animation-delay: 5.8s;
+  width: 25%;
 }
 
 div.main-container > div.navigation > div:nth-child(4) {
   animation-delay: 6.2s;
+  width: 25%;
 }
 
 @keyframes navigator-item-appear {
@@ -267,7 +271,7 @@ div.section#me > div:nth-child(1) > div#job-description {
 }
 
 /* Skills */
-div.main-container > div.section.skills {
+div.main-container > div.section#skills {
   width: 100%;
   display: flex;
   flex-direction: row;
@@ -275,7 +279,7 @@ div.main-container > div.section.skills {
   justify-content: center;
 }
 
-div.main-container > div.section.skills > div.subsection {
+div.main-container > div.section#skills > div.subsection {
   width: 50%;
   display: inherit;
   flex-direction: column;
@@ -284,7 +288,7 @@ div.main-container > div.section.skills > div.subsection {
 }
 
 /* Single technology */
-div.section.skills > div.subsection > div.technology {
+div.section.#skills > div.subsection > div.technology {
   margin-top: 5%;
   display: flex;
   flex-direction: row;
@@ -293,26 +297,26 @@ div.section.skills > div.subsection > div.technology {
 }
 
 /* Technology logo */
-div.section.skills > div.subsection > div.technology > div:nth-child(1) > img {
+div.section#skills > div.subsection > div.technology > div:nth-child(1) > img {
   height: 10px;
 }
 
 /* Technology bar */
-div.section.skills > div.subsection > div.technology > div:nth-child(2) {
+div.section#skills > div.subsection > div.technology > div:nth-child(2) {
   width: 80%;
   border: 2px solid var(--main-text-color);
   border-radius: 10px;
 }
 
 /* Technology bar filling */
-div.section.skills > div.subsection > div.technology > div:nth-child(2) > div {
+div.section#skills > div.subsection > div.technology > div:nth-child(2) > div {
   background-color: var(--main-text-color);
   height: 100%;
   border-radius: inherit;
   box-shadow: 1px 1px 2px var(--main-text-color), -2px -2px 5px var(--main-text-color);
 }
 
-div.section.skills > div.subsection > div.technology
+div.section#skills > div.subsection > div.technology
 > div:nth-child(2).technology-bar.technology-bar-php
 > div.technology-bar-filling {
   width: var(--php-proficiency);
@@ -328,7 +332,7 @@ div.section.skills > div.subsection > div.technology
   }
 }
 
-div.section.skills > div.subsection
+div.section#skills > div.subsection
 > div.technology > div:nth-child(2).technology-bar.technology-bar-html
 > div.technology-bar-filling {
   width: var(--html-proficiency);
@@ -344,7 +348,7 @@ div.section.skills > div.subsection
   }
 }
 
-div.section.skills > div.subsection
+div.section#skills > div.subsection
 > div.technology > div:nth-child(2).technology-bar.technology-bar-mysql >
 div.technology-bar-filling {
   width: var(--mysql-proficiency);
@@ -360,7 +364,7 @@ div.technology-bar-filling {
   }
 }
 
-div.section.skills > div.subsection
+div.section#skills > div.subsection
 > div.technology > div:nth-child(2).technology-bar.technology-bar-js >
 div.technology-bar-filling {
   width: var(--js-proficiency);
@@ -376,7 +380,7 @@ div.technology-bar-filling {
   }
 }
 
-div.section.skills > div.subsection
+div.section#skills > div.subsection
 > div.technology > div:nth-child(2).technology-bar.technology-bar-jquery >
 div.technology-bar-filling {
   width: var(--jquery-proficiency);
@@ -392,7 +396,7 @@ div.technology-bar-filling {
   }
 }
 
-div.section.skills > div.subsection
+div.section#skills > div.subsection
 > div.technology > div:nth-child(2).technology-bar.technology-bar-css >
 div.technology-bar-filling {
   width: var(--css-proficiency);
@@ -408,7 +412,7 @@ div.technology-bar-filling {
   }
 }
 
-div.section.skills > div.subsection
+div.section#skills > div.subsection
 > div.technology > div:nth-child(2).technology-bar.technology-bar-react >
 div.technology-bar-filling {
   width: var(--react-proficiency);

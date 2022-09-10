@@ -9,7 +9,7 @@ import phpLogo from '../skills/php.svg';
 import reactLogo from '../skills/react.svg';
 import React from 'react'
 
-export default function Skills() {
+export default function Skills(props) {
 
     const [side, setSide] = React.useState("backEnd")
 
@@ -23,8 +23,12 @@ export default function Skills() {
         {name : 'react', logo : reactLogo, side: 'frontEnd'}
     ]
 
+    let currentSection = props.sections.filter(
+        (section) => section.text === "Skills"
+    )
+
     return (
-        <div className="section skills">
+        <div id="skills" className="section" ref={currentSection[0].reference}>
           <div className="subsection frontend">
           {technologies
                 .filter((technology) => technology.side === "frontEnd")

@@ -1,6 +1,6 @@
 import React from 'react'
 
-export default function Projects() {
+export default function Projects(props) {
 
     const pathComponents = [
         'bouncing-letters',
@@ -28,9 +28,13 @@ export default function Projects() {
         .then((data) => data.json())
         .then((data) => {setProjects(data)})
     }
+
+    let currentSection = props.sections.filter(
+        (section) => section.text === "Projects"
+    )
     
     return (
-      <div className="section projects">
+      <div id="projects" className="section" ref={currentSection[0].reference}>
         <div className="current-project">
 
         </div>
