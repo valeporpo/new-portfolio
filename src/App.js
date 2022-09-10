@@ -7,10 +7,10 @@ import Contact from './components/Contact'
 export default function App() {
 
   const sections = [
-    'me',
-    'skills',
-    'projects',
-    'contact'
+    'Me',
+    'Skills',
+    'Projects',
+    'Contact'
   ]
 
   return (
