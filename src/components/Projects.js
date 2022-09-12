@@ -21,7 +21,6 @@ export default function Projects(props) {
          }
     }, []
     )
-    console.log(projects)
 
     function fetchProject(pathComponent) {
         fetch(basePath+"/"+pathComponent+"/"+method)
@@ -35,11 +34,14 @@ export default function Projects(props) {
     
     return (
       <div id="projects" className="section" ref={currentSection[0].reference}>
-        <div className="current-project">
-
+        <div id="navigation-container-projects" className="navigation-container">
         </div>
-        <div className="projects-menu-bar">
-            Lorem ipsum
+        <div id="projects-content" className="section-content">
+            <div className="current-project">
+            </div>
+            <div className="projects-menu-bar">
+                Lorem ipsum
+            </div>
         </div>
       </div>
     )
