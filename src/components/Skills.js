@@ -29,19 +29,22 @@ export default function Skills(props) {
 
     return (
         <div id="skills" className="section" ref={currentSection[0].reference}>
-          <div className="subsection frontend">
-          {technologies
-                .filter((technology) => technology.side === "frontEnd")
-                .map((technology) => <Technology name={technology.name}
-                                                            logo={technology.logo}
-                                                />)}
-          </div>
-          <div className="subsection backend">
-          {technologies
-                .filter((technology) => technology.side === "backEnd")
-                .map((technology) => <Technology name={technology.name}
-                                                            logo={technology.logo}
-                                                />)}
+          <div id="navigation-container-skills" className="navigation-container"></div>
+          <div id="skills-content" className="section-content">
+            <div className="subsection frontend">
+            {technologies
+                    .filter((technology) => technology.side === "frontEnd")
+                    .map((technology) => <Technology name={technology.name}
+                                                                logo={technology.logo}
+                                                    />)}
+            </div>
+            <div className="subsection backend">
+            {technologies
+                    .filter((technology) => technology.side === "backEnd")
+                    .map((technology) => <Technology name={technology.name}
+                                                                logo={technology.logo}
+                                                    />)}
+            </div>
           </div>
         </div>
         

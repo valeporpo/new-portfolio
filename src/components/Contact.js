@@ -6,7 +6,11 @@ export default function Contact(props) {
 
     return (
         <div id="contact" className="section" ref={currentSection[0].reference}>
-            Contact
+            <div id="navigation-container-contact" className="navigation-container">
+            </div>
+            <div id="contact-content" className="section-content">
+              Contact
+            </div>
         </div>
         
     )
