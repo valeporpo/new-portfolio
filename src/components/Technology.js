@@ -2,16 +2,24 @@ import React from 'react'
 
 
 export default function Technology(props) {
-
     return (
-        <div className="technology">
-            <div className="technology-logo">
-              <img src={props.logo}/>
-            </div>
-            <div className={"technology-bar technology-bar-"+props.name}>
-              <div className="technology-bar-filling">
-              </div>
-            </div>
+      <div className={`outer-circle outer-circle-${props.name}`}>
+        <div className={`shower-circle shower-circle-top`}>
+          <div className={`shower-half-circle`}></div>
         </div>
+        <div className={`shower-circle shower-circle-bottom`}>
+          <div className={`shower-half-circle`}></div>
+        </div>
+        <div className={`hider-circle hider-circle-top`}>
+          <div className={`hider-half-circle`}></div>
+        </div>
+        <div className={`hider-circle hider-circle-bottom`}>
+          <div className={`hider-half-circle`}></div>
+        </div>
+        <div className={`inner-circle`}>
+           <img src={props.logo} />
+        </div>
+      </div>
     )
+
 }

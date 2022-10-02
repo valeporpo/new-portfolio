@@ -11,39 +11,51 @@ import React from 'react'
 
 export default function Skills(props) {
 
-    const [side, setSide] = React.useState("backEnd")
-
-    const technologies = [
-        {name : 'php', logo : phpLogo, side: 'backEnd'},
-        {name : 'html', logo : htmlLogo, side: 'frontEnd'},
-        {name : 'mysql', logo : mysqlLogo, side: 'backEnd'},
-        {name : 'js', logo : jsLogo, side: 'frontEnd'},
-        {name : 'jquery', logo : jqueryLogo, side: 'frontEnd'},
-        {name : 'css', logo : cssLogo, side: 'frontEnd'},
-        {name : 'react', logo : reactLogo, side: 'frontEnd'}
-    ]
+    const [technologies, setTechnologies] = React.useState([
+        {name : 'php', logo : phpLogo, side: 'backEnd', selected: true},
+        {name : 'html', logo : htmlLogo, side: 'frontEnd', selected: false},
+        {name : 'mysql', logo : mysqlLogo, side: 'backEnd', selected: false},
+        {name : 'js', logo : jsLogo, side: 'frontEnd', selected: false},
+        {name : 'jquery', logo : jqueryLogo, side: 'frontEnd', selected: false},
+        {name : 'css', logo : cssLogo, side: 'frontEnd', selected: false},
+        {name : 'react', logo : reactLogo, side: 'frontEnd', selected: false}
+    ])
 
     let currentSection = props.sections.filter(
         (section) => section.text === "Skills"
     )
 
+    function changeTechnology() {
+      setTechnologies((items) => items.map(function(item, index, array) {
+        let itemSwitched = {...item, ...{selected : !item.selected}}
+        if(item.selected)
+          return itemSwitched
+        else {
+          if(index === 0 && array[array.length-1].selected)
+            return itemSwitched
+          else if(index > 0 && array[index-1].selected)
+            return itemSwitched
+        }
+        return item
+      }))
+    }
+
     return (
         <div id="skills" className="section" ref={currentSection[0].reference}>
-          <div id="navigation-container-skills" className="navigation-container"></div>
+          <div id="navigation-container-me" className="navigation-container"></div>
+          <p onClick={changeTechnology}>click</p>  
           <div id="skills-content" className="section-content">
-            <div className="subsection frontend">
-            {technologies
-                    .filter((technology) => technology.side === "frontEnd")
-                    .map((technology) => <Technology name={technology.name}
-                                                                logo={technology.logo}
-                                                    />)}
+            <div className="subsection">
+              {technologies
+               .filter((technology) => technology.selected) 
+               .map((technology) => <Technology logo={technology.logo}
+                                                name={technology.name}
+                                                key={technology.name}
+                                    />
+              )}
             </div>
-            <div className="subsection backend">
-            {technologies
-                    .filter((technology) => technology.side === "backEnd")
-                    .map((technology) => <Technology name={technology.name}
-                                                                logo={technology.logo}
-                                                    />)}
+            <div className="subsection">
+                Dynamic
             </div>
           </div>
         </div>

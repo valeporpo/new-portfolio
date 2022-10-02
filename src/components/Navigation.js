@@ -31,9 +31,10 @@ export default function Navigation(props) {
 
     function getSectionPosition(userPosition) {
       let currentSection
+
       props.sections.forEach(function(section) {
+
         let sectionOffset = section.reference.current.offsetTop
-        console.log(sectionOffset +  " " + userPosition)
         // Se la distanza tra l'inizio del documento e la posizione
         // della parte estremo-alta della view-port è maggiore o uguale
         // alla distanza tra l'inizio della sezione corrente e l'inizio del documento
@@ -48,12 +49,11 @@ export default function Navigation(props) {
 
     React.useEffect(() => {
       window.addEventListener("scroll", function(){
-        //console.log(navigationRef.current.offsetHeight)
         
         let scrollVertPosition = this.scrollY + navigationRef.current.offsetHeight + navigationRef.current.offsetTop
-        //console.log(scrollVertPosition +" "+this.scrollY)
         let currentSection = getSectionPosition(scrollVertPosition)
         let currentSectionIndex = props.sections.indexOf(currentSection)
+
         menuBars.forEach(function(menuBar) {
           let color = menuBar.name === currentSection.reference.current.id ?
                       (currentSectionIndex % 2 === 0 ? "#0F3D3E" : "#100F0F") :
