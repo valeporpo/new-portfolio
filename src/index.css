@@ -5,13 +5,21 @@
   --secondary-background-color: #0F3D3E;
   --main-text-color: #E2DCC8;
   --secondary-text-color: #F1F1F1;
-  --php-proficiency: 56%;
-  --html-proficiency: 53%;
-  --mysql-proficiency: 45%;
-  --js-proficiency: 40%;
-  --jquery-proficiency: 36%;
-  --css-proficiency: 19%;
-  --react-proficiency: 15%;
+  --php-color: #777BB3;
+  --html-color: #f06529;
+  --mysql-color: #f29111;
+  --js-color: #F0DB4F;
+  --jquery-color: #0769ad;
+  --css-color: #2965f1;
+  --react-color: #61DBFB;
+  --php-proficiency: 6;
+  --html-proficiency: 3;
+  --mysql-proficiency: 45;
+  --js-proficiency: 40;
+  --jquery-proficiency: 36;
+  --css-proficiency: 19;
+  --react-proficiency: 15;
+  --half-circle-speed: 1s;
 }
 
 body {
@@ -24,22 +32,22 @@ body {
 }
 
 /* Main container */
-body > div#root > div.main-container {
+body > #root > .main-container {
   display: flex;
   flex-direction: column;
 }
 
 /* Sections */
-div.main-container > div.section {
+.main-container > .section {
   height: 100vh;
 }
 
-div.main-container > div.section:nth-child(odd) {
+.main-container > .section:nth-child(odd) {
   background-color: var(--secondary-background-color);
 }
 
 /* Navigation */
-div.main-container > div.navigation {
+.main-container > .navigation {
   position: fixed;
   top: 15px;
   left: 15px;
@@ -53,14 +61,14 @@ div.main-container > div.navigation {
   z-index: 3;
 }
 
-div.main-container > div.navigation > div.navigation-menu {
+.main-container > .navigation > .navigation-menu {
   display: inherit;
   flex-direction: row;
   align-items: inherit;
   justify-content: inherit;
 }
 
-div.main-container > div.navigation > div.navigation-menu > div {
+.main-container > .navigation > .navigation-menu > div {
   cursor: pointer;
   width: 25%;
   height: 17px;
@@ -75,7 +83,7 @@ div.main-container > div.navigation > div.navigation-menu > div {
   animation-fill-mode: forwards;
 }
 
-div.main-container > div.navigation > div.navigation-bar {
+.main-container > .navigation > .navigation-bar {
   display: inherit;
   flex-direction: row;
   align-items: inherit;
@@ -83,7 +91,7 @@ div.main-container > div.navigation > div.navigation-bar {
   width: 100%;
 }
 
-div.main-container > div.navigation > div.navigation-bar > div {
+.main-container > .navigation > .navigation-bar > div {
   height: 0px;
   width: 0%;
   border: 0px solid var(--main-background-color);
@@ -91,7 +99,7 @@ div.main-container > div.navigation > div.navigation-bar > div {
   animation-fill-mode: forwards;
 }
 
-div.main-container > div.navigation > div.navigation-bar > div:first-child {
+.main-container > .navigation > .navigation-bar > div:first-child {
   border: 0px solid var(--secondary-background-color);
 }
 
@@ -100,26 +108,26 @@ div.main-container > div.navigation > div.navigation-bar > div:first-child {
   100% { border-width: 3px; width: 25%; }
 }
 
-div.main-container > div.navigation > div.navigation-menu > div:hover {
+.main-container > .navigation > .navigation-menu > div:hover {
   font-weight: 1000;
 }
 
-div.main-container > div.navigation > div.navigation-menu > div:nth-child(1) {
+.main-container > .navigation > .navigation-menu > div:nth-child(1) {
   animation-delay: 5s;
   width: 25%;
 }
 
-div.main-container > div.navigation > div.navigation-menu > div:nth-child(2) {
+.main-container > .navigation > .navigation-menu > div:nth-child(2) {
   animation-delay: 5.3s;
   width: 25%;
 }
 
-div.main-container > div.navigation > div.navigation-menu > div:nth-child(3) {
+.main-container > .navigation > .navigation-menu > div:nth-child(3) {
   animation-delay: 5.6s;
   width: 25%;
 }
 
-div.main-container > div.navigation > div.navigation-menu > div:nth-child(4) {
+.main-container > .navigation > .navigation-menu > div:nth-child(4) {
   animation-delay: 5.9s;
   width: 25%;
 }
@@ -133,7 +141,7 @@ div.main-container > div.navigation > div.navigation-menu > div:nth-child(4) {
   }
 }
 
-div.main-container > div.section > div.navigation-container {
+.main-container > .section > .navigation-container {
   position: sticky;
   top: 0;
   width: 100%;
@@ -141,18 +149,18 @@ div.main-container > div.section > div.navigation-container {
   z-index: 2;
 }
 
-div.main-container > div.section#me > div.navigation-container,
-div.main-container > div.section#projects > div.navigation-container {
+.main-container > .section#me > .navigation-container,
+.main-container > .section#projects > .navigation-container {
   background-color: var(--main-background-color);
 }
 
-div.main-container > div.section#skills > div.navigation-container,
-div.main-container > div.section#contact > div.navigation-container {
+.main-container > .section#skills > .navigation-container,
+.main-container > .section#contact > .navigation-container {
   background-color: var(--secondary-background-color);
 }
 
-/* Me */
-div.main-container > div.section#me > div.section-content {
+/* Sezione Me */
+.main-container > .section#me > .section-content {
   display: flex;
   justify-content: center;
   align-items: center;
@@ -161,8 +169,7 @@ div.main-container > div.section#me > div.section-content {
   height: 92%;
 }
 
-div.main-container > div.section#me > div.section-content
-> div:not(.navigation-container) {
+.section#me > .section-content > div:not(.navigation-container) {
   display: inherit;
   flex-direction: inherit;
   align-items: inherit;
@@ -171,7 +178,7 @@ div.main-container > div.section#me > div.section-content
   font-size: 20px;
 }
 
-div.main-container > div.section#me > div.section-content > div#person {
+.section#me > .section-content > #person {
   display: inherit;
   flex-direction: column;
   align-items: inherit;
@@ -179,11 +186,11 @@ div.main-container > div.section#me > div.section-content > div#person {
   width: 40%;
 }
 
-div.main-container > div.section#me > div.section-content > div#person > div {
+.section#me > .section-content > #person > div {
   width: 100%;
 }
 
-div.main-container > div.section#me > div.section-content > div#separator {
+.section#me > .section-content > #separator {
   display: inherit;
   flex-direction: column;
   align-items: inherit;
@@ -191,8 +198,7 @@ div.main-container > div.section#me > div.section-content > div#separator {
   width: 0%;
 }
 
-div.main-container > div.section#me > div.section-content
-> div#separator > div {
+.section#me > .section-content > #separator > div {
   border: 0px solid var(--secondary-background-color);
   height: 0%;
   animation: divider-appear 1s linear 3s;
@@ -204,16 +210,14 @@ div.main-container > div.section#me > div.section-content
   100% { border: 3px solid var(--secondary-background-color); height: 30%; }
 }
 
-div.main-container > div.section#me > div.section-content
-> div#description {
+.section#me > .section-content > #description {
   width: 60%;
   padding-left: 30px;
   padding-right: 30px;
   box-sizing: border-box;
 }
 
-div.main-container > div.section#me > div.section-content
-> div#description > p {
+.section#me > .section-content > #description > p {
   font-size: 16px;
   opacity: 0;
   animation: main-text-appear 1s linear 4s;
@@ -221,26 +225,23 @@ div.main-container > div.section#me > div.section-content
 }
 
 @keyframes main-text-appear {
-
   from {
     opacity: 0;
   }
-
   to {
     opacity: 1;
   }
-  
 }
 
-div.section#me > div.section-content > div#person > div.animation-hider {
+.section#me > .section-content > #person > .animation-hider {
   height: 20%;
   position: relative;
   z-index: 1;
   background-color: #100F0F;
 }
 
-div.section#me > div.section-content > div#person > div#name-surname,
-div.section#me > div.section-content > div#person > div#job-description {
+.section#me > .section-content > #person > #name-surname,
+.section#me > .section-content > #person > #job-description {
   display: inherit;
   flex-direction: row;
   align-items: inherit;
@@ -250,7 +251,7 @@ div.section#me > div.section-content > div#person > div#job-description {
   line-height: 100%;
 }
 
-div.section#me > div.section-content > div#person > div#name-surname > span {
+.section#me > .section-content > #person > #name-surname > span {
   position: absolute;
   top: -100%;
   z-index: 0;
@@ -269,7 +270,7 @@ div.section#me > div.section-content > div#person > div#name-surname > span {
   }
 }
 
-div.section#me > div.section-content > div#person > div#job-description > span {
+.section#me > .section-content > #person > #job-description > span {
   position: absolute;
   top: 100%;
   z-index: 0;
@@ -288,11 +289,11 @@ div.section#me > div.section-content > div#person > div#job-description > span {
   }
 }
 
-div.section#me > div.section-content > div#person > div#name-surname {
+.section#me > .section-content > #person > #name-surname {
   height: 5%;
 }
 
-div.section#me > div.section-content > div#person > img {
+.section#me > .section-content > #person > img {
   height: 50%;
   border-radius: 50%;
   opacity: 0;
@@ -300,23 +301,22 @@ div.section#me > div.section-content > div#person > img {
   animation-fill-mode: forwards;
 }
 
-div.section#me > div.section-content > div#person > div#job-description {
+.section#me > .section-content > #person > #job-description {
   height: 5%;
 }
-
 
 @keyframes profile-img-appear {
   20% {
     opacity: 0;
   }
-
   100% {
     opacity: 1;
   }
 }
+/* End sezione Me */
 
-/* Skills */
-div.main-container > div.section#skills > div.section-content {
+/* Sezione Skills */
+.section#skills > .section-content {
   width: 100%;
   display: flex;
   flex-direction: row;
@@ -324,190 +324,348 @@ div.main-container > div.section#skills > div.section-content {
   justify-content: center;
 }
 
-div.main-container > div.section#skills > div.section-content > div.subsection {
-  width: 50%;
-  display: inherit;
-  flex-direction: column;
-  align-items: inherit;
-  justify-content: inherit;
-}
+  .section#skills > .section-content > .subsection {
+    width: 50%;
+    height: 100%;
+    display: inherit;
+    flex-direction: column;
+    align-items: inherit;
+    justify-content: inherit;
+  }
 
-/* Single technology */
-div.section#skills > div.section-content > div.subsection > div.technology {
-  margin-top: 5%;
-  display: flex;
-  flex-direction: row;
-  justify-content: space-between;
-  width: 60%;
-}
+    .section#skills .outer-circle {
+      width: 50%;
+      aspect-ratio: 1/1;
+      background-color: var(--main-background-color);
+      border-radius: 50%;
+      position: relative;
+    }
 
-/* Technology logo */
-div.section#skills > div.section-content > div.subsection > div.technology > div:nth-child(1) > img {
-  height: 10px;
-}
+      .outer-circle > .inner-circle {
+        width: 75%;
+        height: 75%;
+        background-color: var(--secondary-background-color);
+        border-radius: 50%;
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+        z-index: 7;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+      }
 
-/* Technology bar */
-div.section#skills > div.section-content > div.subsection > div.technology > div:nth-child(2) {
-  width: 80%;
-  border: 2px solid var(--main-text-color);
-  border-radius: 10px;
-}
+        .outer-circle > .inner-circle > img {
+          width: 100px;
+        }
 
-/* Technology bar filling */
-div.section#skills > div.section-content > div.subsection > div.technology > div:nth-child(2) > div {
-  background-color: var(--main-text-color);
-  height: 100%;
-  border-radius: inherit;
-  box-shadow: 1px 1px 2px var(--main-text-color), -2px -2px 5px var(--main-text-color);
-}
+      .section#skills > .section-content > .subsection
+      > .outer-circle > .hider-circle,
+      .section#skills > .section-content
+      > .subsection > .outer-circle > .shower-circle {
+        width: 100%;
+        height: 100%;
+        border-radius: 50%;
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+      }
 
-div.section#skills > div.section-content > div.subsection > div.technology
-> div:nth-child(2).technology-bar.technology-bar-php
-> div.technology-bar-filling {
-  width: var(--php-proficiency);
-  animation: php-animate 0.5s linear;
-}
+      .section#skills > .section-content
+      > .subsection > .outer-circle
+      > .hider-circle.hider-circle-bottom {
+        z-index: 3;
+        padding: 2px;
+      }
 
-@keyframes php-animate {
+      .section#skills > .section-content
+      > .subsection > .outer-circle
+      > .hider-circle.hider-circle-top {
+        z-index: 5;
+        padding: 2px;
+      }
+
+      .section#skills > .section-content
+      > .subsection > .outer-circle-php
+      > .hider-circle.hider-circle-bottom {
+        animation: first-half-move-php 1s linear;
+        animation-fill-mode: forwards;
+      }
+
+      .section#skills > .section-content
+      > .subsection > .outer-circle-php
+      > .hider-circle.hider-circle-top {
+        animation: second-half-move-php 1s linear 1s;
+        animation-fill-mode: forwards;
+      }
+
+      .section#skills > .section-content
+      > .subsection > .outer-circle-html
+      > .hider-circle.hider-circle-bottom {
+        animation: first-half-move-html 1s linear;
+        animation-fill-mode: forwards;
+      }
+
+      .section#skills > .section-content
+      > .subsection > .outer-circle-html
+      > .hider-circle.hider-circle-top {
+        animation: second-half-move-html 1s linear 1s;
+        animation-fill-mode: forwards;
+      }
+
+      .section#skills > .section-content
+      > .subsection > .outer-circle-mysql
+      > .hider-circle.hider-circle-bottom {
+        animation: first-half-move-mysql 1s linear;
+        animation-fill-mode: forwards;
+      }
+
+      .section#skills > .section-content
+      > .subsection > .outer-circle-js
+      > .hider-circle.hider-circle-bottom {
+        animation: first-half-move-js 1s linear;
+        animation-fill-mode: forwards;
+      }
+
+      .section#skills > .section-content
+      > .subsection > .outer-circle-jquery
+      > .hider-circle.hider-circle-bottom {
+        animation: first-half-move-jquery 1s linear;
+        animation-fill-mode: forwards;
+      }
+
+      .section#skills > .section-content
+      > .subsection > .outer-circle-css
+      > .hider-circle.hider-circle-bottom {
+        animation: first-half-move-css 1s linear;
+        animation-fill-mode: forwards;
+      }
+
+      .section#skills > .section-content
+      > .subsection > .outer-circle-react
+      > .hider-circle.hider-circle-bottom {
+        animation: first-half-move-react 1s linear;
+        animation-fill-mode: forwards;
+      }
+
+      .section#skills > .section-content
+      > .subsection > .outer-circle
+      > .shower-circle.shower-circle-top {
+        z-index: 2;
+        animation: change-display-priority-second-half 0s linear 1s;
+        animation-fill-mode: forwards;
+      }
+      
+      /* Da assegnare a tutte le technology con un livello > 50% */
+      .section#skills .outer-circle-php
+      > .shower-circle.shower-circle-bottom,
+      .section#skills .outer-circle-html
+      > .shower-circle.shower-circle-bottom {
+        z-index: 1;
+        animation: change-display-priority-first-half 0s linear 1s;
+        animation-fill-mode: forwards;
+      }
+
+        .outer-circle > .hider-circle > .hider-half-circle,
+        .outer-circle > .shower-circle > .shower-half-circle {
+          width: 100%; 
+          height: 50%;
+          background-color: var(--secondary-background-color);
+          border-radius: 50% 50% 0 0 / 100% 100% 0 0;;
+          position: absolute;
+          top: 50%;
+          left: 50%;
+        }
+
+        .outer-circle > .hider-circle.hider-circle-top
+        > .hider-half-circle {
+          background-color: var(--secondary-background-color);
+          transform: translate(-50%, -100%);
+        }
+
+        .outer-circle > .hider-circle.hider-circle-bottom
+        > .hider-half-circle {
+          background-color: var(--secondary-background-color);
+          transform: translate(-50%, 0%) rotate(180deg);
+        }
+
+        .outer-circle > .shower-circle.shower-circle-top
+        > .shower-half-circle {
+          background-color: var(--main-background-color);
+          transform: translate(-50%, -100%);
+        }
+
+        .outer-circle > .shower-circle.shower-circle-bottom
+        > .shower-half-circle {
+          background-color: var(--main-background-color);
+          transform: translate(-50%, 0%) rotate(180deg);
+        }
+
+        .outer-circle.outer-circle-php > .shower-circle > .shower-half-circle {
+          background-color: var(--php-color);
+        }
+
+        .outer-circle.outer-circle-html > .shower-circle > .shower-half-circle {
+          background-color: var(--html-color);
+        }
+
+        .outer-circle.outer-circle-mysql > .shower-circle > .shower-half-circle {
+          background-color: var(--mysql-color);
+        }
+
+        .outer-circle.outer-circle-js > .shower-circle > .shower-half-circle {
+          background-color: var(--js-color);
+        }
+
+        .outer-circle.outer-circle-jquery > .shower-circle > .shower-half-circle {
+          background-color: var(--jquery-color);
+        }
+
+        .outer-circle.outer-circle-css > .shower-circle > .shower-half-circle {
+          background-color: var(--css-color);
+        }
+
+        .outer-circle.outer-circle-react > .shower-circle > .shower-half-circle {
+          background-color: var(--react-color);
+        }
+
+@keyframes first-half-move-php {
   from {
-    width: 0%;
+    transform: translate(-50%, -50%) rotate(0deg);
   }
   to {
-    width: var(--php-proficiency);
+    transform: translate(-50%, -50%) rotate(calc(50*360deg/100));
   }
 }
 
-div.section#skills > div.section-content > div.subsection
-> div.technology > div:nth-child(2).technology-bar.technology-bar-html
-> div.technology-bar-filling {
-  width: var(--html-proficiency);
-  animation: html-animate 0.5s linear;
-}
-
-@keyframes html-animate {
+@keyframes second-half-move-php {
   from {
-    width: 0%;
+    transform: translate(-50%, -50%) rotate(0deg);
   }
   to {
-    width: var(--html-proficiency);
+    transform: translate(-50%, -50%) rotate(calc(var(--php-proficiency)*360deg/100));
   }
 }
 
-div.section#skills > div.section-content > div.subsection
-> div.technology > div:nth-child(2).technology-bar.technology-bar-mysql >
-div.technology-bar-filling {
-  width: var(--mysql-proficiency);
-  animation: mysql-animate 0.5s linear;
-}
-
-@keyframes mysql-animate {
+@keyframes first-half-move-html {
   from {
-    width: 0%;
+    transform: translate(-50%, -50%) rotate(0deg);
   }
   to {
-    width: var(--mysql-proficiency);
+    transform: translate(-50%, -50%) rotate(calc(50*360deg/100));
   }
 }
 
-div.section#skills > div.section-content > div.subsection
-> div.technology > div:nth-child(2).technology-bar.technology-bar-js >
-div.technology-bar-filling {
-  width: var(--js-proficiency);
-  animation: js-animate 0.5s linear;
-}
-
-@keyframes js-animate {
+@keyframes second-half-move-html {
   from {
-    width: 0%;
+    transform: translate(-50%, -50%) rotate(0deg);
   }
   to {
-    width: var(--js-proficiency);
+    transform: translate(-50%, -50%) rotate(calc(var(--html-proficiency)*360deg/100));
   }
 }
 
-div.section#skills > div.section-content > div.subsection
-> div.technology > div:nth-child(2).technology-bar.technology-bar-jquery >
-div.technology-bar-filling {
-  width: var(--jquery-proficiency);
-  animation: jquery-animate 0.5s linear;
-}
-
-@keyframes jquery-animate {
+@keyframes first-half-move-mysql {
   from {
-    width: 0%;
+    transform: translate(-50%, -50%) rotate(0deg);
   }
   to {
-    width: var(--jquery-proficiency);
+    transform: translate(-50%, -50%) rotate(calc(var(--mysql-proficiency)*360deg/100));
   }
 }
 
-div.section#skills > div.section-content > div.subsection
-> div.technology > div:nth-child(2).technology-bar.technology-bar-css >
-div.technology-bar-filling {
-  width: var(--css-proficiency);
-  animation: css-animate 0.5s linear;
-}
-
-@keyframes css-animate {
+@keyframes first-half-move-js {
   from {
-    width: 0%;
+    transform: translate(-50%, -50%) rotate(0deg);
   }
   to {
-    width: var(--css-proficiency);
+    transform: translate(-50%, -50%) rotate(calc(var(--js-proficiency)*360deg/100));
   }
 }
 
-div.section#skills > div.section-content > div.subsection
-> div.technology > div:nth-child(2).technology-bar.technology-bar-react >
-div.technology-bar-filling {
-  width: var(--react-proficiency);
-  animation: react-animate 0.5s linear;
-}
-
-@keyframes react-animate {
+@keyframes first-half-move-jquery {
   from {
-    width: 0%;
+    transform: translate(-50%, -50%) rotate(0deg);
   }
   to {
-    width: var(--react-proficiency);
+    transform: translate(-50%, -50%) rotate(calc(var(--jquery-proficiency)*360deg/100));
   }
 }
 
-div.main-container > div:last-child 
-> div.carousel > div.projects {
+@keyframes first-half-move-css {
+  from {
+    transform: translate(-50%, -50%) rotate(0deg);
+  }
+  to {
+    transform: translate(-50%, -50%) rotate(calc(var(--css-proficiency)*360deg/100));
+  }
+}
+
+@keyframes first-half-move-react {
+  from {
+    transform: translate(-50%, -50%) rotate(0deg);
+  }
+  to {
+    transform: translate(-50%, -50%) rotate(calc(var(--react-proficiency)*360deg/100));
+  }
+}
+
+@keyframes change-display-priority-first-half {
+  from {
+    z-index:1;
+  }
+  to {
+    z-index:6;
+  }
+}
+
+@keyframes change-display-priority-second-half {
+  from {
+    z-index:1;
+  }
+  to {
+    z-index:4;
+  }
+}
+/* End sezione Skills */
+
+.main-container > div:last-child 
+> .carousel > .projects {
   position: relative;
 }
 
-div.main-container > div:last-child
-> div.carousel > div.projects > div {
+.main-container > div:last-child
+> .carousel > .projects > div {
   color: black;
   position: absolute;
   height: 60%;
   width: 20%;
 }
 
-div.main-container > div:last-child
-> div.carousel > div.projects > div:nth-child(1) {
+.main-container > div:last-child
+> .carousel > .projects > div:nth-child(1) {
   background-color: red;
   transform: scale(0.5);
   left: 0;
 }
 
-div.main-container > div:last-child
-> div.carousel > div.projects > div:nth-child(2) {
+.main-container > div:last-child
+> .carousel > .projects > div:nth-child(2) {
   background-color: green;
   left: 50%;
   transform: translate(-50%);
 }
 
-div.main-container > div:last-child
-> div.carousel > div.projects > div:nth-child(3) {
+.main-container > div:last-child
+> .carousel > .projects > div:nth-child(3) {
   background-color: yellow;
   transform: scale(0.5);
   right: 0;
 }
 
 /* Section carousel arrows */
-div.main-container > div:last-child > div.carousel > div:not(:nth-child(2)) {
+.main-container > div:last-child > .carousel > div:not(:nth-child(2)) {
   cursor: pointer;
 }
